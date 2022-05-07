@@ -31,6 +31,7 @@ export class RegisterComponent implements OnInit {
     this.authService.register(register).then(r=>{
       console.log("AAAAAA")
       console.log(r)
+      this.route.navigate(['/login'])
     });
   }
 

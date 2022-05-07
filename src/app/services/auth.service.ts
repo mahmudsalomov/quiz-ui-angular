@@ -4,13 +4,14 @@ import {SignIn} from "../dto/SignIn";
 import axios from "axios";
 import {Constants} from "../constants/constants";
 import {configHeader} from "../configHeader";
+import {Router} from "@angular/router";
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  constructor() { }
+  constructor(private router:Router) { }
 
   async register(register:RegisterDto): Promise<any>{
     let result;
@@ -29,11 +30,14 @@ export class AuthService {
 
 
 
-  login(login:SignIn):void{
+  async login(login:SignIn):Promise<void>{
     console.log(login)
-    axios.post(Constants.BASE_URL_ORGANIZATION_LOGIN,login,configHeader)
-      .then(response=>{
-        localStorage.setItem(Constants.TOKEN,response.data.token)
+    await axios.post(Constants.BASE_URL_ORGANIZATION_LOGIN,login,configHeader)
+      .then(async response => {
+        localStorage.setItem(Constants.TOKEN, response.data.token)
+        // await this.router.navigate(["/"], {queryParams: {returnUrl: "/dashboard"}})
+        window.location.href="/dashboard"
+        // await this.router.navigateByUrl("/dashboard")
       })
       .catch(error=>{
         console.log(error)
