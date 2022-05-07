@@ -13,11 +13,10 @@ import { InfographicComponent } from './components/infographic/infographic.compo
 import {FormsModule} from "@angular/forms";
 import {RouterModule, Routes} from "@angular/router";
 import { OrganizationDashboardComponent } from './components/organization-dashboard/organization-dashboard.component';
-import { SidebarComponent } from './components/organization-dashboard/sidebar/sidebar.component';
-
+import {AuthGuardService} from "./services/auth-guard.service";
 const appRoutes: Routes=[
-  {path:'',component:BodyComponent},
-  {path:'dashboard',component:OrganizationDashboardComponent},
+  {path:'',component:BodyComponent,canActivate: [AuthGuardService]},
+  {path:'dashboard',component:OrganizationDashboardComponent,canActivate: [AuthGuardService]},
   {path:'login',component:LoginComponent},
   {path:'register',component:RegisterComponent}
 ]
@@ -33,8 +32,7 @@ const appRoutes: Routes=[
     LoginComponent,
     RegisterComponent,
     InfographicComponent,
-    OrganizationDashboardComponent,
-    SidebarComponent
+    OrganizationDashboardComponent
   ],
     imports: [
         BrowserModule,

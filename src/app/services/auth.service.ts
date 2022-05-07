@@ -31,5 +31,25 @@ export class AuthService {
 
   login(login:SignIn):void{
     console.log(login)
+    axios.post(Constants.BASE_URL_ORGANIZATION_LOGIN,login,configHeader)
+      .then(response=>{
+        localStorage.setItem(Constants.TOKEN,response.data.token)
+      })
+      .catch(error=>{
+        console.log(error)
+      })
+  }
+
+  async check():Promise<boolean>{
+    let result:boolean=false;
+    console.log(configHeader)
+    await axios.get(Constants.BASE_URL_ORGANIZATION_AUTH_CHECK,configHeader)
+      .then(response=>{
+        if (response.data) result=true;
+      })
+      .catch(error=>{
+        console.log(error)}
+      )
+    return result;
   }
 }
