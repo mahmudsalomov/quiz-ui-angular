@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class Constants {
-  static BASE_URL: string = 'http://localhost:8085/api';
+  static BASE_URL: string = 'http://localhost:8082/api';
   static BASE_URL_ORGANIZATION: string = Constants.BASE_URL + '/organization';
   static BASE_URL_ORGANIZATION_AUTH: string = Constants.BASE_URL_ORGANIZATION + '/auth';
   static BASE_URL_ORGANIZATION_AUTH_CHECK: string = Constants.BASE_URL_ORGANIZATION_AUTH + '/check';

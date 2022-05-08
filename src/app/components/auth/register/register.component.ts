@@ -11,6 +11,7 @@ import {Router} from "@angular/router";
 export class RegisterComponent implements OnInit {
   fio: string | undefined;
   email: string | undefined;
+  organizationName: string | undefined;
   username: string | undefined;
   password: string | undefined;
   retype_password: string | undefined;
@@ -26,7 +27,7 @@ export class RegisterComponent implements OnInit {
   }
 
   register():void{
-    let register = new RegisterDto(this.fio, this.email, this.username, this.password);
+    let register = new RegisterDto(this.fio, this.email, this.organizationName, this.username, this.password);
     console.log(register)
     this.authService.register(register).then(r=>{
       console.log("AAAAAA")

@@ -14,8 +14,18 @@ import {FormsModule} from "@angular/forms";
 import {RouterModule, Routes} from "@angular/router";
 import { OrganizationDashboardComponent } from './components/organization-dashboard/organization-dashboard.component';
 import {AuthGuardService} from "./services/auth-guard.service";
+import { CategoryComponent } from './components/category/category.component';
+import { QuizComponent } from './components/quiz/quiz.component';
+import { BlockComponent } from './components/block/block.component';
+import { ParticipantComponent } from './components/participant/participant.component';
+import { ExamComponent } from './components/exam/exam.component';
 const appRoutes: Routes=[
   {path:'',component:BodyComponent,canActivate: [AuthGuardService]},
+  {path:'category',component:CategoryComponent,canActivate: [AuthGuardService]},
+  {path:'quiz',component:QuizComponent,canActivate: [AuthGuardService]},
+  {path:'block',component:BlockComponent,canActivate: [AuthGuardService]},
+  {path:'participant',component:ParticipantComponent,canActivate: [AuthGuardService]},
+  {path:'exam',component:ExamComponent,canActivate: [AuthGuardService]},
   {path:'dashboard',component:OrganizationDashboardComponent,canActivate: [AuthGuardService]},
   {path:'login',component:LoginComponent},
   {path:'register',component:RegisterComponent}
@@ -32,7 +42,12 @@ const appRoutes: Routes=[
     LoginComponent,
     RegisterComponent,
     InfographicComponent,
-    OrganizationDashboardComponent
+    OrganizationDashboardComponent,
+    CategoryComponent,
+    QuizComponent,
+    BlockComponent,
+    ParticipantComponent,
+    ExamComponent
   ],
     imports: [
         BrowserModule,
