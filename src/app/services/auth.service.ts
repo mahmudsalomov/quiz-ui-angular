@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {RegisterDto} from "../dto/RegisterDto";
 import {SignIn} from "../dto/SignIn";
 import axios from "axios";
-import {Constants} from "../constants/constants";
+import {Constants} from "../constants/Constants";
 import {configHeader} from "../configHeader";
 import {Router} from "@angular/router";
 

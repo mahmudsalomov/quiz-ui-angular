@@ -1,4 +1,4 @@
-import {Constants} from "./constants/constants";
+import {Constants} from "./constants/Constants";
 
 export const configHeader=({headers:{
     'Authorization':"Bearer "+localStorage.getItem(Constants.TOKEN),

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {AuthService} from "../../services/auth.service";
-import {Constants} from "../../constants/constants";
+import {Constants} from "../../constants/Constants";
 
 @Component({
   selector: 'app-navbar',

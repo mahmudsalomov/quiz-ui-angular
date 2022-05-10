@@ -19,6 +19,7 @@ import { QuizComponent } from './components/quiz/quiz.component';
 import { BlockComponent } from './components/block/block.component';
 import { ParticipantComponent } from './components/participant/participant.component';
 import { ExamComponent } from './components/exam/exam.component';
+import { ModalComponent } from './components/category/modal/modal.component';
 const appRoutes: Routes=[
   {path:'',component:BodyComponent,canActivate: [AuthGuardService]},
   {path:'category',component:CategoryComponent,canActivate: [AuthGuardService]},
@@ -47,7 +48,8 @@ const appRoutes: Routes=[
     QuizComponent,
     BlockComponent,
     ParticipantComponent,
-    ExamComponent
+    ExamComponent,
+    ModalComponent
   ],
     imports: [
         BrowserModule,
