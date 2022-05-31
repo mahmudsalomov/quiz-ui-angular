@@ -12,8 +12,8 @@ export class ModalComponent implements OnInit {
   name:string|undefined;
   description:string|undefined;
   @Input() category!:CategoryDto;
-  @Input() public getCategories: (() => void)|undefined;
-  @Input() save: void | undefined
+  // @Input() public getCategories: (() => void) | undefined;
+  @Input() save?: (() => void)
   constructor(private quizService:QuizService) { }
 
   ngOnInit(): void {
@@ -31,20 +31,18 @@ export class ModalComponent implements OnInit {
   saveC():any{
 
     let dto:CategoryDto=new CategoryDto(undefined,this.name,this.description,1);
+    this.save?.()
     console.log(dto)
-    this.name=undefined;
-    this.description=undefined;
-    this.quizService.addCategory(dto).then(r=>{
-      console.log(r)
-      this.getCategories()
-    })
-      .catch(error=>{
-        console.log(error)
-      })
-    // console.log("CCCCCCCCCCCCCCCcccc")
-    // // @ts-ignore
-    // console.log(this.getCategories())
-    // // this.save(this.category)
+    // this.name=undefined;
+    // this.description=undefined;
+    // this.quizService.addCategory(dto).then(r=>{
+    //   console.log(r)
+    //   // this.getCategories()
+    // })
+    //   .catch(error=>{
+    //     console.log(error)
+    //   })
+
   }
 
 
