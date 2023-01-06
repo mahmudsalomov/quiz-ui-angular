@@ -46,6 +46,7 @@ export class CategoryComponent implements OnInit {
   getCategories():void{
     this.quizService.getAllCategory()
       .then(r=>{
+        console.log("AAAAAAAAAa")
       this.categoryList=r
       })
       .catch(error=>{

@@ -18,7 +18,7 @@ export class QuizService {
     await axios.get(Constants.BASE_URL_QUIZ_CATEGORY+"/all",configHeader)
       .then(r=>{
         console.log(r)
-        result=r.data;
+        result=r.data.object;
       })
       .catch(error=>{
         console.log(error)})

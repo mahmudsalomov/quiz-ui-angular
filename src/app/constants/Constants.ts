@@ -4,8 +4,8 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class Constants {
-  static BASE_URL: string = 'http://localhost:8085/api';
-  static BASE_URL_ORGANIZATION: string = Constants.BASE_URL + '/organization';
+  static BASE_URL: string = 'http://localhost:8080/api';
+  static BASE_URL_ORGANIZATION: string = Constants.BASE_URL + '';
   static BASE_URL_ORGANIZATION_AUTH: string = Constants.BASE_URL_ORGANIZATION + '/auth';
   static BASE_URL_ORGANIZATION_AUTH_CHECK: string = Constants.BASE_URL_ORGANIZATION_AUTH + '/check';
   static BASE_URL_ORGANIZATION_AUTH_USER: string = Constants.BASE_URL_ORGANIZATION + '/user';
@@ -14,7 +14,7 @@ export class Constants {
 
 
   static BASE_URL_QUIZ: string = Constants.BASE_URL + '/quiz';
-  static BASE_URL_QUIZ_CATEGORY: string = Constants.BASE_URL_QUIZ + '/category';
+  static BASE_URL_QUIZ_CATEGORY: string = Constants.BASE_URL+'/category';
 
 
 
